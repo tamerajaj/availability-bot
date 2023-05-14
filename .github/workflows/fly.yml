@@ -1,11 +1,12 @@
 name: Fly Deploy
-needs: lint
+
 on:
   push:
     branches:
       - main
 jobs:
   deploy:
+    needs: lint
     name: Deploy app
     runs-on: ubuntu-latest
     steps:
