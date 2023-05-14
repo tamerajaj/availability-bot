@@ -31,7 +31,14 @@ if __version_info__ < (20, 0, 0, "alpha", 1):
         f"visit https://docs.python-telegram-bot.org/en/v{TG_VER}/examples.html"
     )
 from telegram import ForceReply, Update
-from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters, PicklePersistence
+from telegram.ext import (
+    Application,
+    CommandHandler,
+    ContextTypes,
+    MessageHandler,
+    filters,
+    PicklePersistence,
+)
 
 import os
 
@@ -75,14 +82,18 @@ async def check_status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     await update.message.reply_text(status_text)
 
 
-async def t_status_available(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def t_status_available(
+    update: Update, context: ContextTypes.DEFAULT_TYPE
+) -> None:
     """Set T status as available."""
     bot_data = context.bot_data
     bot_data["t_status"] = True
     await update.message.reply_text("T is now available.")
 
 
-async def m_status_available(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def m_status_available(
+    update: Update, context: ContextTypes.DEFAULT_TYPE
+) -> None:
     """Set M status as available."""
     bot_data = context.bot_data
     bot_data["m_status"] = True
@@ -106,11 +117,14 @@ async def m_status_busy(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
 def main() -> None:
     """Start the bot."""
     # Create the PicklePersistence instance and pass the file name
-    persistence = PicklePersistence(filepath='/data/data.pkl')
+    persistence = PicklePersistence(filepath="/data/data.pkl")
     # Create the Application and pass it your bot's token.
-    assert (bot_token := os.environ.get('TOKEN')), 'Please, set environment var TOKEN with your bot token'
-    application = Application.builder().token(bot_token).persistence(
-        persistence).build()
+    assert (
+        bot_token := os.environ.get("TOKEN")
+    ), "Please, set environment var TOKEN with your bot token"
+    application = (
+        Application.builder().token(bot_token).persistence(persistence).build()
+    )
 
     # on different commands - answer in Telegram
     application.add_handler(CommandHandler("start", start))
@@ -121,7 +135,9 @@ def main() -> None:
     application.add_handler(CommandHandler("m_busy", m_status_busy))
     application.add_handler(CommandHandler("check", check_status))
     # on non command i.e. message - send the /help message on Telegram
-    application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, help_command))
+    application.add_handler(
+        MessageHandler(filters.TEXT & ~filters.COMMAND, help_command)
+    )
 
     # Run the bot until the user presses Ctrl-C
     application.run_polling()
