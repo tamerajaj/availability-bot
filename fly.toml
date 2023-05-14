@@ -5,5 +5,5 @@ processes = []
 primary_region = "ams"
 
 [mounts]
-source="myapp_data"
-destination="/data"
+source = "myapp_data"
+destination = "/data"
