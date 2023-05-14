@@ -11,4 +11,5 @@ Adapted from [Echo Bot](https://docs.python-telegram-bot.org/en/stable/examples.
 * How to use BotFather to create a Telegram Bot Token: [Link](https://core.telegram.org/bots/tutorial)
 * Pickle Persistence for Python Telegram Bot: [Link](https://docs.python-telegram-bot.org/en/stable/telegram.ext.picklepersistence.html)
 * How to deploy a Telegram bot to Fly.io: [Wayback Machine, saved 14.05.2023](https://web.archive.org/save/https://bakanim.xyz/posts/deploy-telegram-bot-to-fly-io/)
+* How to create a Volume on Fly.io: [Link](https://fly.io/docs/reference/volumes/)
 * Fly.io Continuous Deployment with Fly.io and GitHub Actions: [Wayback Machine, saved 14.05.2023](https://web.archive.org/web/20230514153718/https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/)
