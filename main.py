@@ -18,14 +18,7 @@ if __version_info__ < (20, 0, 0, "alpha", 1):
         f"visit https://docs.python-telegram-bot.org/en/v{TG_VER}/examples.html"
     )
 from telegram import ForceReply, Update
-from telegram.ext import (
-    Application,
-    CommandHandler,
-    ContextTypes,
-    MessageHandler,
-    filters,
-    PicklePersistence,
-)
+from telegram.ext import (Application,    CommandHandler,    ContextTypes,    MessageHandler,    filters,    PicklePersistence,)
 
 import os
 
