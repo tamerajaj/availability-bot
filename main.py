@@ -116,7 +116,7 @@ def main() -> None:
     application.add_handler(CommandHandler("m_busy", m_status_busy))
     application.add_handler(CommandHandler("check", check_status))
     # on non command i.e message - echo the message on Telegram
-    # application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
+    application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, help_command))
 
     # Run the bot until the user presses Ctrl-C
     application.run_polling()
