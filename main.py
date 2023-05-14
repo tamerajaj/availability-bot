@@ -18,7 +18,14 @@ if __version_info__ < (20, 0, 0, "alpha", 1):
         f"visit https://docs.python-telegram-bot.org/en/v{TG_VER}/examples.html"
     )
 from telegram import ForceReply, Update
-from telegram.ext import (Application,    CommandHandler,    ContextTypes,    MessageHandler,    filters,    PicklePersistence,)
+from telegram.ext import (
+    Application,
+    CommandHandler,
+    ContextTypes,
+    MessageHandler,
+    filters,
+    PicklePersistence,
+)
 
 import os
 
@@ -41,7 +48,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Send a message when the command /help is issued."""
+    """
+    Send a message when the command /help is issued."""
     help_message = """
     Available commands are:
     /check : check status
@@ -63,7 +71,7 @@ async def check_status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
 
 async def t_status_available(
-        update: Update, context: ContextTypes.DEFAULT_TYPE
+    update: Update, context: ContextTypes.DEFAULT_TYPE
 ) -> None:
     """
     Set T status as available.
@@ -74,7 +82,7 @@ async def t_status_available(
 
 
 async def m_status_available(
-        update: Update, context: ContextTypes.DEFAULT_TYPE
+    update: Update, context: ContextTypes.DEFAULT_TYPE
 ) -> None:
     """Set M status as available."""
     bot_data = context.bot_data
