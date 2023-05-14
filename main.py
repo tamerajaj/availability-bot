@@ -63,16 +63,18 @@ async def check_status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
 
 async def t_status_available(
-    update: Update, context: ContextTypes.DEFAULT_TYPE
+        update: Update, context: ContextTypes.DEFAULT_TYPE
 ) -> None:
-    """Set T status as available."""
+    """
+    Set T status as available.
+    """
     bot_data = context.bot_data
     bot_data["t_status"] = True
     await update.message.reply_text("T is now available.")
 
 
 async def m_status_available(
-    update: Update, context: ContextTypes.DEFAULT_TYPE
+        update: Update, context: ContextTypes.DEFAULT_TYPE
 ) -> None:
     """Set M status as available."""
     bot_data = context.bot_data
