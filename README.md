@@ -13,3 +13,6 @@ Adapted from [Echo Bot](https://docs.python-telegram-bot.org/en/stable/examples.
 * How to deploy a Telegram bot to Fly.io: [Wayback Machine, saved 14.05.2023](https://web.archive.org/save/https://bakanim.xyz/posts/deploy-telegram-bot-to-fly-io/)
 * How to create a Volume on Fly.io: [Link](https://fly.io/docs/reference/volumes/)
 * Fly.io Continuous Deployment with Fly.io and GitHub Actions: [Wayback Machine, saved 14.05.2023](https://web.archive.org/web/20230514153718/https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/)
+* How to add ```black``` to repo: [Link](https://black.readthedocs.io/en/stable/integrations/github_actions.html)
+* Installing pre-commit hooks: [Link](https://pre-commit.com/)
+* Adding ```black``` as pre-commit to the repo: [Link]( https://black.readthedocs.io/en/stable/integrations/source_version_control.html#version-control-integration)
