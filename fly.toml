@@ -2,6 +2,7 @@ app = "availability-bot"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
+primary_region = "ams"
 
 [mounts]
 source="myapp_data"
