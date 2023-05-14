@@ -106,7 +106,7 @@ async def m_status_busy(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
 def main() -> None:
     """Start the bot."""
     # Create the PicklePersistence instance and pass the file name
-    persistence = PicklePersistence(filepath='data.pkl')
+    persistence = PicklePersistence(filepath='/data/data.pkl')
     # Create the Application and pass it your bot's token.
     assert (bot_token := os.environ.get('TOKEN')), 'Please, set environment var TOKEN with your bot token'
     application = Application.builder().token(bot_token).persistence(
