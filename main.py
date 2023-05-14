@@ -98,20 +98,6 @@ async def m_status_busy(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     await update.message.reply_text("M is now busy.")
 
 
-def read_status(persistence):
-    data = persistence.bot_data.get('status')
-    if data is None:
-        data = [False, False]
-        persistence.bot_data['status'] = data
-    return data
-
-
-def write_status(persistence, pers, val):
-    data = read_status(persistence)
-    data[pers] = val
-    persistence.bot_data['status'] = data
-
-
 def main() -> None:
     """Start the bot."""
     # Create the PicklePersistence instance and pass the file name
