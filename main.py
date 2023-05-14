@@ -34,11 +34,14 @@ from telegram import ForceReply, Update
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters, PicklePersistence
 
 import os
+
 # Enable logging
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
 )
 logger = logging.getLogger(__name__)
+
+
 # Define a few command handlers. These usually take the two arguments update and
 # context.
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -61,6 +64,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     /m_avail : M is available 
     """
     await update.message.reply_text(help_message)
+
 
 async def check_status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Check the status."""
