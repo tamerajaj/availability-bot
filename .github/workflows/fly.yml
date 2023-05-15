@@ -1,9 +1,11 @@
 name: Fly Deploy
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows:
+      - "Lint"
+    types:
+      - completed
 jobs:
   deploy:
     needs: lint
